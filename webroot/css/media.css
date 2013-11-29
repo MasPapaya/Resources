@@ -1,0 +1,11 @@
+.modal-resources{width: 800px !important;}
+.view_image{text-align: center;position: relative;line-height: 300px;}
+.view_image img{
+	max-height: 90%;
+	
+}
+.view_image .next-image,.view_image .prev-image{text-indent: -99999px;display: inline-block;position: absolute;top: 45%;display: none;}
+.view_image:hover .next-image,.view_image:hover .prev-image{display: block;}
+.next-image:hover, .prev-image:hover{display: block;}
+.view_image .next-image{background: url('../img/next.png');width: 28px;height: 59px;right: 20px;}
+.view_image .prev-image{background: url('../img/back.png');width: 28px;height: 59px;left: 20px;}
