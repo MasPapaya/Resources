@@ -7,7 +7,7 @@
 <div class="span9">
 	<?php echo $this->Form->create('AllowedResourceType'); ?>
 	<fieldset>
-		<legend><?php echo __(' Add Allowed Resource Type'); ?></legend>
+		<legend><?php echo __('Add Allowed Resource Type'); ?></legend>
 		<?php
 			echo $this->Form->input('resource_group_type_id', array('empty' => __('Select'),'label'=>__('Resource Group Type')));
 			echo $this->Form->input('resource_type_id', array('empty' => __('Select'),'label'=>  __('Resource Type')));

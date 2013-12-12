@@ -59,6 +59,7 @@ class ResourcesHandlerComponent extends Component {
 	     * cargamos la entidad
 	     */
 	    $ResourceEntity = ClassRegistry::init('Configurations.Entity');
+			$this->ViewResourceGroup = ClassRegistry::init('Resources.ViewResourceGroup');
 	    $this->settings = $ResourceEntity->find('first', array(
 		'recursive' => -1,
 		'conditions' => array(
@@ -70,7 +71,7 @@ class ResourcesHandlerComponent extends Component {
     }
 
     public function startup(Controller $controller) {
-	$this->ViewResourceGroup = ClassRegistry::init('Resources.ViewResourceGroup');
+//	$this->ViewResourceGroup = ClassRegistry::init('Resources.ViewResourceGroup');
     }
 
     public function Read($parent_entityid, $type = 'first', $query = array()) {

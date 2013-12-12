@@ -31,7 +31,7 @@ class MediaController extends ResourcesAppController {
 		}
 	}
 
-	public function files($resource_group_type_id = NULL, $parent_entityid = NULL,$entity_alias=NULL) {
+	public function files($resource_group_type_id = NULL, $parent_entityid = NULL, $entity_alias = NULL) {
 		$this->loadModel('ViewResource');
 		$this->loadModel('Resource');
 		$this->paginate = array(
@@ -44,10 +44,10 @@ class MediaController extends ResourcesAppController {
 
 		//$resources = $this->ViewResource->find('all', array('order' => 'ordering ASC', 'conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid)));
 
-		$this->set(compact('resources', 'resource_group_type_id', 'parent_entityid','entity_alias'));
+		$this->set(compact('resources', 'resource_group_type_id', 'parent_entityid', 'entity_alias'));
 
 		$this->set('total_resources', $this->ViewResource->find('count', array('conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid))));
-		
+
 		// debug($resources);
 	}
 
@@ -173,12 +173,12 @@ class MediaController extends ResourcesAppController {
 		return false;
 	}
 
-	public function edit($id = null, $resource_group_type_id = NULL, $parent_entityid = NULL) {
+	public function edit($id = null, $resource_group_type_id = NULL, $parent_entityid = NULL, $entity_alias = NULL) {
 		$this->loadModel('Resource');
 		if (!$this->Resource->exists($id)) {
 			throw new NotFoundException(__('Invalid resource'));
 		}
-		$this->set(compact('resource_group_type_id', 'parent_entityid'));
+		$this->set(compact('resource_group_type_id', 'parent_entityid', 'entity_alias'));
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Resource->save($this->request->data)) {
 				$this->Session->setFlash(__('The resource has been saved'), 'flash/success');
@@ -192,7 +192,7 @@ class MediaController extends ResourcesAppController {
 		}
 	}
 
-	public function view($id = null, $resource_group_type_id = null, $parent_entityid = null, $count_images = 0) {
+	public function view($id = null, $resource_group_type_id = null, $parent_entityid = null, $entity_alias = null, $count_images = 0) {
 		$this->loadModel('ViewResource');
 		$image = $this->ViewResource->find('first', array('conditions' => array('ViewResource.id' => $id)));
 		$prev = $this->ViewResource->find('first', array(
@@ -226,7 +226,7 @@ class MediaController extends ResourcesAppController {
 			}
 		}
 
-		$this->set(compact('resource_group_type_id', 'parent_entityid', 'image', 'prev', 'next', 'count_images'));
+		$this->set(compact('resource_group_type_id', 'parent_entityid', 'image', 'prev', 'next', 'count_images', 'entity_alias'));
 	}
 
 	public function delete($id = null, $resource_group_type_id = null, $parent_entityid = null) {
