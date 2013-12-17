@@ -7,6 +7,19 @@ class FrameHelper extends AppHelper {
 
 	public $helpers = array('Html', 'Js');
 
+	public function link_files($icon = 'icon-film', $id = 'default', $resource_group_typeid = NULL, $parent_entityid = NULL) {
+		$this->scriptload();
+		$url = array('plugin' => 'resources', 'controller' => 'Media', 'action' => 'files', $resource_group_typeid, $parent_entityid, 'admin' => FALSE);
+
+		return $this->Html->link('<i class="' . $icon . '"></i>', '#' . $id, array(
+				'role' => 'button',
+				'class' => 'btn btn-resources',
+				'data-toggle' => 'modal',
+				'escape' => FALSE,
+				'data-url' => Router::url($url, true)
+			));
+	}
+
 	public function link($icon = 'icon-film', $id = 'default', $entity = '', $parent_entityid = NULL) {
 		$this->scriptload();
 		$url = array('plugin' => 'resources', 'controller' => 'Media', 'action' => 'index', $entity, $parent_entityid, 'admin' => FALSE);

@@ -1,7 +1,9 @@
 <legend><?php echo __('Resource List'); ?> 
 	<div class="btn-group">
 		<?php echo $this->Html->link(__('Add Resource'), array('action' => 'upload', $resource_group_type_id, $parent_entityid), array('class' => 'btn btn-primary')); ?>
-		<?php echo $this->Html->link(__('Cancel'), array('action' => 'index', $entity_alias, $parent_entityid), array('class' => 'btn')); ?>
+		<?php if (!empty($entity_alias)): ?>
+			<?php echo $this->Html->link(__('Cancel'), array('action' => 'index', $entity_alias, $parent_entityid), array('class' => 'btn')); ?>
+		<?php endif; ?>
 	</div>
 </legend>
 <div>
