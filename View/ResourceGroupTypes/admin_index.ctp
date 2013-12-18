@@ -4,7 +4,7 @@
 		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>&nbsp;' . __('New Resource Group Type'), array('action' => 'add', 'admin' => true),  array('escape' => FALSE)); ?></li>
 	</ul>
 </div>
-<div class="span9">
+<div class="span8">
 	<h2><?php echo __('Resource Group Types'); ?></h2>
 	<table  class="table table-striped table-bordered table-condensed">
 		<thead>
