@@ -13,9 +13,9 @@
 	<thead>
 		<tr>
 			<th><?php echo h('id'); ?></th>
-			<th><?php echo h('name'); ?></th>
-			<th><?php echo h('created'); ?></th>
-			<th><?php echo h('ordering'); ?></th>
+			<th><?php echo __('name'); ?></th>
+			<th><?php echo __('created'); ?></th>
+			<th><?php echo __('ordering'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 		</tr>
 	</thead>
