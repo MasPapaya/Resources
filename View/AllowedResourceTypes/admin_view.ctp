@@ -1,12 +1,8 @@
-<div class="span3 well">
-	<ul class="nav nav-list">
-		<li class="nav-header"><?php echo __('Actions'); ?></li>
-		<li><?php echo $this->Html->link('<i class="icon-list"></i>&nbsp;'.__('List Allowed Resource Types'), array('action' => 'index', 'admin' => true), array('escape' => FALSE)); ?></li>
-		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>&nbsp;'.__('New Allowed Resource Type'), array('action' => 'add', 'admin' => true), array('escape' => FALSE)); ?></li>
-	</ul>	
-</div>
-<div class="span9">
-	<h2><?php  echo __('Allowed Resource Type'); ?></h2>
+<div class="cru">
+	<div class="btn-options">
+		<?php echo $this->Html->link('<i class="icon-list icon-white"></i>&nbsp;' . __('Back to List'), array('action' => 'index', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>	
+	</div>
+	<h2><?php echo __('Allowed Resource Type'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>

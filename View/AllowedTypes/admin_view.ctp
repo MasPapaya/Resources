@@ -5,7 +5,7 @@
 		<li><?php echo $this->Html->link('<i class="icon-plus-sign"></i>&nbsp;'.__('New Allowed Type'), array('action' => 'add', 'admin' => true), array('escape' => FALSE)); ?></li>
 	</ul>	
 </div>
-<div class="span9">
+<div class="span8">
 	<h2><?php  echo __('Allowed Type'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
