@@ -38,6 +38,7 @@ class MediaController extends ResourcesAppController {
 			'ViewResource' => array(
 				'order' => 'ordering ASC',
 				'limit' => -1,
+				'group'=>array('ViewResource.id'),
 			)
 		);
 		$resources = $this->paginate('ViewResource', array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid));

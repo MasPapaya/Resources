@@ -9,10 +9,10 @@
 		<?php
 		echo __('Allowed types') . ': ';
 		foreach ($types as $key => $type) {
-			if($key != 0) {
+			if ($key != 0) {
 				echo ', ';
 			}
-			echo $type['ViewResourceSetting']['resource_type_name'] . ' (' . $type['ViewResourceSetting']['extensions']. ')';
+			echo $type['ViewResourceSetting']['resource_type_name'] . ' (' . $type['ViewResourceSetting']['extensions'] . ')';
 		}
 		?>
 	</div>
@@ -20,6 +20,7 @@
 <div class="btn-group">
 	<?php
 	echo $this->Html->link(__('Cancel'), array('action' => 'files', $resource_group_type_id, $parent_entityid), array('class' => 'btn'));
-	echo $this->Form->submit(__('Send'), array('div' => FALSE, 'class' => 'btn btn-primary')); ?>
+	echo $this->Form->submit(__('Save'), array('div' => FALSE, 'class' => 'btn btn-primary'));
+	?>
 </div>
 <?php echo $this->Form->end(); ?>
