@@ -152,7 +152,7 @@ LEFT JOIN resource_group_types ResourceGroupType on ResourceGroupType.id = Resou
 LEFT JOIN allowed_resource_types AllowedResourceType on AllowedResourceType.resource_group_type_id = ResourceGroupType.id
 LEFT JOIN resource_types ResourceType on AllowedResourceType.resource_type_id = ResourceType.id
 LEFT JOIN entities Entity on ResourceGroupType.entity_id = Entity.id
-WHERE ResourceType.id = Resource.resource_type_id;
+WHERE ResourceType.id = Resource.resource_type_id GROUP BY Resource.id;
 
 
 -- -----------------------------------------------------
