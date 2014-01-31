@@ -7,9 +7,9 @@ class FrameHelper extends AppHelper {
 
 	public $helpers = array('Html', 'Js');
 
-	public function link_files($icon = 'icon-film', $id = 'default', $resource_group_typeid = NULL, $parent_entityid = NULL) {
+	public function link_files($icon = 'icon-film', $id = 'default',  $parent_entityid = NULL,$resource_group_type_alias = NULL) {
 		$this->scriptload();
-		$url = array('plugin' => 'resources', 'controller' => 'Media', 'action' => 'files', $resource_group_typeid, $parent_entityid, 'admin' => FALSE);
+		$url = array('plugin' => 'resources', 'controller' => 'Media', 'action' => 'files_link', $parent_entityid, $resource_group_type_alias, 'admin' => FALSE);
 
 		return $this->Html->link('<i class="' . $icon . '"></i>', '#' . $id, array(
 				'role' => 'button',
@@ -46,7 +46,7 @@ EOD;
 	public function modal($id = 'default', $options = array()) {
 
 		isset($options['title']) ? $header = $options['title'] : $header = __('Title');
-
+		$close = __('Close');
 		$str = <<<EOD
 <div id="$id" class="modal modal-resources hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
 <div class="modal-header">
@@ -57,7 +57,7 @@ EOD;
 <iframe class="resources" src=""></iframe>
 </div>
 <div class="modal-footer">
-<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+<button class="btn" data-dismiss="modal" aria-hidden="true">$close</button>
 </div>
 </div>
 EOD;

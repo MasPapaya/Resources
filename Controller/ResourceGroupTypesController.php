@@ -42,7 +42,7 @@ class ResourceGroupTypesController extends ResourcesAppController {
 	public function admin_view($id = null) {
 		$this->ResourceGroupType->id = $id;
 		if (!$this->ResourceGroupType->exists()) {
-			throw new NotFoundException(__('Invalid resource group type'));
+			throw new NotFoundException(__d('resources','Invalid resource group type'));
 		}
 		$this->set('resourceGroupType', $this->ResourceGroupType->read(null, $id));
 	}
@@ -56,10 +56,10 @@ class ResourceGroupTypesController extends ResourcesAppController {
 		if ($this->request->is('post')) {
 			$this->ResourceGroupType->create();
 			if ($this->ResourceGroupType->save($this->request->data)) {
-				$this->Session->setFlash(__('The resource group type has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('resources','The resource group type has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The resource group type could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('resources','The resource group type could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 		$entities = $this->ResourceGroupType->Entity->find('list');
@@ -76,14 +76,14 @@ class ResourceGroupTypesController extends ResourcesAppController {
 	public function admin_edit($id = null) {
 		$this->ResourceGroupType->id = $id;
 		if (!$this->ResourceGroupType->exists()) {
-			throw new NotFoundException(__('Invalid resource group type'));
+			throw new NotFoundException(__d('resources','Invalid resource group type'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ResourceGroupType->save($this->request->data)) {
-				$this->Session->setFlash(__('The resource group type has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('resources','The resource group type has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The resource group type could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('resources','The resource group type could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$this->request->data = $this->ResourceGroupType->read(null, $id);
@@ -106,13 +106,13 @@ class ResourceGroupTypesController extends ResourcesAppController {
 		}
 		$this->ResourceGroupType->id = $id;
 		if (!$this->ResourceGroupType->exists()) {
-			throw new NotFoundException(__('Invalid resource group type'));
+			throw new NotFoundException(__d('resources','Invalid resource group type'));
 		}
 		if ($this->ResourceGroupType->delete()) {
-			$this->Session->setFlash(__('Resource group type deleted'), 'flash/success');
+			$this->Session->setFlash(__d('resources','Resource group type deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Resource group type was not deleted'), 'flash/error');
+		$this->Session->setFlash(__d('resources','Resource group type was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

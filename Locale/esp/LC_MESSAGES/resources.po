@@ -13,84 +13,215 @@ msgstr ""
 "X-Poedit-Language: Español\n"
 "X-Poedit-Country: COLOMBIA\n"
 
-#: Controller/ResourceGroupsController.php:29;64;92
-#: Plugin/Resources/Controller/ResourceGroupsController.php:29;64;93
-msgid "Invalid resource group"
-msgstr ""
+#:--- RESOURCES
+msgid	"Resources"
+msgstr	"Recursos"
+msgid	"name"
+msgstr	"Nombre"
+msgid	"Files"
+msgstr	"Archivos"
+msgid	"New Resource"
+msgstr	"Nuevo Recurso"
+msgid	"Filename"
+msgstr	"Recurso"
+msgid	"Add Resource"
+msgstr	"Nuevo Recurso"
+msgid	"Entity"
+msgstr	"Entidad"
 
-#: Controller/ResourceGroupsController.php:44;68
-#: Plugin/Resources/Controller/ResourceGroupsController.php:44;68
-msgid "The resource group has been saved"
-msgstr "Se ha guardado el recurso en el grupo"
+msgid	"Are you sure you want to remove %s of the group?"
+msgstr	"¿Está seguro que desea eliminar% s del grupo?"
+msgid	"Selected File"
+msgstr	"Seleccionar archivo"
+msgid	"List Resources"
+msgstr	"Lista de Recursos"
+msgid	"Form not allowed to remove resources!"
+msgstr	"La forma no permitida para quitar recursos!"
+msgid	"Resources have been ordered successfully"
+msgstr	"Los recursos se han ordenado con éxito"
+msgid	"error ordering multimedia resources"
+msgstr	"Erro en el ordenamiento de los recursos"
+msgid	"Add files"
+msgstr	"Nuevos archivos"
+msgid	"Admin Edit Resource Group Type"
+msgstr	"Editar tipo de grupo de recursos"
+msgid	"Delete"
+msgstr	"Eliminar"
+msgid	"Display"
+msgstr	"Mostar"
+msgid	"Edit Resource"
+msgstr	"Editar Recurso"
+msgid	"Elimination successful."
+msgstr	"Eliminación exitosa"
+msgid	"Invalid Resource"
+msgstr	"Recurso inválido"
+msgid	"Are you sure you want to delete the record"
+msgstr	"Estas seguro que seas eliminar el registro"
+msgid	"error saving the resource"
+msgstr	"Error al guardar el recurso"
+msgid	"resource is saved"
+msgstr	"Recurso guardado"
+msgid	"Upload Files External"
+msgstr	"Subir archivos externos"
+msgid	"error saving the file."
+msgstr	"Error al guardar el archivo"
+msgid	"The resource has been saved"
+msgstr	"El recurso se ha guardado"
+msgid	"The resource could not be saved. Please, try again."
+msgstr	"El recurso no se pudo guardar. Por favor, inténtelo de nuevo."
+msgid	"Error: move_uploaded_file"
+msgstr	"Error: Subir archivo"
+msgid	"File type in not allowed."
+msgstr	"Tipo de archivo en no permitido."
+msgid	"Files without group"
+msgstr	"Archivos sin grupo"
+msgid	"Invalid resource"
+msgstr	"Recurso no válido"
+msgid	"Resource List"
+msgstr	"Listado de recurso"
+msgid	"Resource data not set."
+msgstr	"Los datos del recurso no estan establecidos"
+msgid	"Resource deleted."
+msgstr	"Recurso eliminado"
+msgid	"Resource Entity"
+msgstr	"Entidad del Recurso"
+msgid	"Resource not set."
+msgstr	"Recursos no establecido."
+msgid	"Save File"
+msgstr	"Archivo Guardado"
+msgid	"The resource group could not be saved. Please, try again."
+msgstr	"No se pudo guardar el recurso en el grupo, Inténtelo nuevamente."
+msgid	"resource is saved"
+msgstr	"Recurso fue guardado"
+msgid	"incomplete Form"
+msgstr	"Formulario incompleto"
 
-#: Controller/ResourceGroupsController.php:47;71
-#: Plugin/Resources/Controller/ResourceGroupsController.php:47;71
-msgid "The resource group could not be saved. Please, try again."
-msgstr "No se pudo guardar el recurso en el grupo, Inténtelo nuevamente"
 
-#: Controller/ResourceGroupsController.php:96
-#: Plugin/Resources/Controller/ResourceGroupsController.php:97
+#: -------- RESOURCE TYPES
+msgid	"Resource Type"
+msgstr	"Tipo de Recursos"
+msgid	"List Resource Types"
+msgstr	"Listado"
+msgid	"Resource Type"
+msgstr	"Tipo de recurso"
+msgid	"Resource Types"
+msgstr	"Tipos de recursos"
+msgid	"Admin Edit Resource Type"
+msgstr	"Editar tipo de recursos"
+msgid	"New Resource Type"
+msgstr	"Nuevo tipo de recurso"
+
+msgid	"The resource type could not be saved. Please, try again."
+msgstr	"El tipo de recurso no se pudo guardar. Por favor, inténtelo de nuevo."
+msgid	"Invalid resource type"
+msgstr	"Tipo de recurso no válido"
+msgid	"Resource type deleted"
+msgstr	"Tipo de Recurso eliminado"
+msgid	"Resource type was not deleted"
+msgstr	"Tipo de recurso no se ha eliminado"
+msgid	"The resource type has been saved"
+msgstr	"El tipo de recurso se ha guardado"
+msgid	"The resource group type could not be saved. Please, try again."
+msgstr	"El tipo de grupo de recursos no se pudo guardar. Por favor, inténtelo de nuevo."
+
+#: -----  ALLOWED TYPE
+msgid	" Add Allowed Type"
+msgstr	"Nuevo Tipo permitido"
+msgid	"Allowed Resource Type"
+msgstr	"Tipo de Recursos permitidos"
+msgid	"Allowed Resource Types"
+msgstr	"Tipos de Recursos permitidos"
+msgid	"Allowed Type"
+msgstr	"Tipo Permitido"
+msgid	"Allowed Types"
+msgstr	"Tipos Permitidos"
+msgid	"Allowed resource type deleted"
+msgstr	"Tipo de recurso permitido eliminado"
+msgid	"Allowed type deleted"
+msgstr	"Tipo permitido eliminado"
+msgid	"Allowed type was not deleted"
+msgstr	"El tipo permitido no fue eliminado"
+msgid	"Allowed types"
+msgstr	"Tipos permitidos"
+msgid	"Edit Allowed Type"
+msgstr	"Editar tipo Permitido"
+msgid	"Add Allowed Resource Type"
+msgstr	"Nuevo tipo de recurso permitido"
+msgid	"Invalid allowed resource type"
+msgstr	"Tipo de recurso permitido inválido"
+msgid	"Invalid allowed type"
+msgstr	"Tipo permitido inválido"
+msgid	"New Allowed Type"
+msgstr	"Nueva Tipo Permitido
+msgid	"The allowed resource type could not be saved. Please, try again."
+msgstr	"El tipo de recurso permitido no se pudo guardar. Por favor, inténtelo de nuevo."
+msgid	"The allowed resource type has been saved"
+msgstr	"El tipo de recurso permitido se ha guardado"
+msgid	"The allowed type could not be saved. Please, try again."
+msgstr	"El tipo permitido no se pudo guardar. Por favor, inténtelo de nuevo."
+msgid	"The allowed type has been saved"
+msgstr	"El recurso no se pudo guardar. Por favor, inténtelo de nuevo."
+msgid	"Admin Edit Allowed Resource Type"
+msgstr	"Editar tipo de recurso permitido"
+
+
+
+#:--- RESOURCE GROUP TYPE
+msgid	"The resource group type has been saved"
+msgstr	"El tipo de grupo de recursos se ha guardado"
+msgid	"Add Resource Group Type"
+msgstr	"Nuevo tipo grupos de recursos"
+msgid	"Invalid resource group type"
+msgstr	"Inválido tipo de grupo de recursos"
+msgid	"New Resource Group Type"
+msgstr	"Nuevo recurso Tipo de grupo"
+msgid	"Resource Group Type"
+msgstr	"Tipo de grupo de recurso"
+msgid	"Resource group type deleted"
+msgstr	"Tipo de grupo de recursos de eliminado"
+msgid	"Resource group type was not deleted"
+msgstr	"Tipo de grupo de recursos no se ha eliminado"
+msgid	"Resource Group Types"
+msgstr	"Tipos de grupos de Recursos"
+msgid	"Invalid resource group"
+msgstr	"Grupo de recurso inválido"
+msgid	"The resource group has been saved"
+msgstr	"Se ha guardado el recurso en el grupo"
 msgid "Resource group deleted"
 msgstr "Recurso eliminado del grupo"
 
-#: Controller/ResourceGroupsController.php:99
-#: Plugin/Resources/Controller/ResourceGroupsController.php:99
-msgid "Resource group was not deleted"
-msgstr "El recurso no se pudo eliminar del grupo"
 
-#: Plugin/Resources/Controller/AllowedResourceTypesController.php:47;82;113
+
+
 msgid "Invalid allowed resource type"
 msgstr "El tipo de recurso permitido no es correcto"
 
-#: Plugin/Resources/Controller/AllowedResourceTypesController.php:61;86
 msgid "The allowed resource type has been saved"
 msgstr "El tipo de recurso permitido se ha guardado"
-
-#: Plugin/Resources/Controller/AllowedResourceTypesController.php:64;89
 msgid "The allowed resource type could not be saved. Please, try again."
 msgstr "El nuevo tipo de recurso permitido no se pudo guardar, Inténtelo nuevamente"
-
-#: Plugin/Resources/Controller/AllowedResourceTypesController.php:116
 msgid "Allowed resource type deleted"
 msgstr "Tipo de recurso permitido fue eliminado"
-
-#: Plugin/Resources/Controller/AllowedResourceTypesController.php:119
 msgid "Allowed resource type was not deleted"
 msgstr "El tipo de recurso permitido no se pudo eliminar"
-
-#: Plugin/Resources/Controller/AllowedTypesController.php:41;75;105
 msgid "Invalid allowed type"
 msgstr "Tipo permitido no es correcto"
-
-#: Plugin/Resources/Controller/AllowedTypesController.php:55;79
 msgid "The allowed type has been saved"
 msgstr "El nuevo tipo permitido fue guardado"
-
-#: Plugin/Resources/Controller/AllowedTypesController.php:58;82
 msgid "The allowed type could not be saved. Please, try again."
 msgstr "El tipo permitido no se pudo guardar. Inténtelo nuevamente"
-
-#: Plugin/Resources/Controller/AllowedTypesController.php:108
 msgid "Allowed type deleted"
 msgstr "Tipo permitido eliminado"
-
-#: Plugin/Resources/Controller/AllowedTypesController.php:111
 msgid "Allowed type was not deleted"
 msgstr "Tipo permitido no fue eliminado"
 
-#: Plugin/Resources/Controller/FileUploadsController.php:21
-msgid "resource is saved"
-msgstr "Recurso fue guardado"
 
-#: Plugin/Resources/Controller/FileUploadsController.php:28
-msgid "incomplete Form"
-msgstr "Formulario incompleto"
 
-#: Plugin/Resources/Controller/ResourceEntitiesController.php:30;62;87
+
 msgid "Invalid resource entity"
 msgstr "Entidad de recursos no es correcta"
 
-#: Plugin/Resources/Controller/ResourceEntitiesController.php:45;66
+
 msgid "The resource entity has been saved"
 msgstr "La entidad de recursos fue guardado"
 
@@ -186,73 +317,44 @@ msgstr "El grupo de recursos no existe"
 msgid "The group does not support the file format."
 msgstr "El grupo no soporta el formato del archivo"
 
-#: Plugin/Resources/Controller/Component/CoreResourcesComponent.php:190
+
 msgid "Invalid Resource"
 msgstr "Recurso incorrecto"
 
-#: Plugin/Resources/Controller/Component/CoreResourcesComponent.php:349
+
 msgid "Could not save the file on the server."
 msgstr "No se pudo guardar el archivo en el servidor"
 
-#: Plugin/Resources/Controller/Component/CoreResourcesComponent.php:353
-#: Plugin/Resources/Controller/Component/ResourcesHandlerComponent.php:145
 msgid "File not allowed"
 msgstr "Archivo no permitido"
 
-#: Plugin/Resources/Controller/Component/CoreResourcesComponent.php:357
+
 msgid "Incorrect or missing url specified address."
 msgstr "Url incorrecta "
 
-#: Plugin/Resources/Controller/Component/CoreResourcesComponent.php:389
+
 msgid "error saving the resource"
 msgstr "Error al guardar el recurso"
 
-#: Plugin/Resources/Controller/Component/ResourcesHandlerComponent.php:146
+
 msgid "File size exceeds the limit"
 msgstr "Archivo excede el limite de tamaño permitido"
 
-#: Plugin/Resources/Controller/Component/ResourcesHandlerComponent.php:147
+
 msgid "File size insufficient"
 msgstr "Archivo con tamaño insuficiente"
 
-#: Plugin/Resources/Controller/Component/ResourcesHandlerComponent.php:148
+
 msgid "You have exceeded the number of files"
 msgstr "se ha excedido en el numero de archivos"
 
-#: Plugin/Resources/Controller/Component/ResourcesHandlerComponent.php:149
+
 msgid "Operation Aborted"
 msgstr "Operacion abortada"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_add.ctp:3
-#: Plugin/Resources/View/AllowedResourceTypes/admin_edit.ctp:3
-#: Plugin/Resources/View/AllowedResourceTypes/admin_index.ctp:3;23
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:22
-#: Plugin/Resources/View/AllowedTypes/admin_add.ctp:3
-#: Plugin/Resources/View/AllowedTypes/admin_edit.ctp:3
-#: Plugin/Resources/View/AllowedTypes/admin_index.ctp:3;23
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:22
-#: Plugin/Resources/View/ResourceEntities/admin_add.ctp:4
-#: Plugin/Resources/View/ResourceEntities/admin_edit.ctp:3
-#: Plugin/Resources/View/ResourceEntities/admin_index.ctp:3;24
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:27;50;90;138
-#: Plugin/Resources/View/ResourceGroupTypes/admin_add.ctp:3
-#: Plugin/Resources/View/ResourceGroupTypes/admin_edit.ctp:3
-#: Plugin/Resources/View/ResourceGroupTypes/admin_index.ctp:3;24
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:27;48
-#: Plugin/Resources/View/ResourceGroups/add.ctp:14
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:15
-#: Plugin/Resources/View/ResourceGroups/index.ctp:9;44
-#: Plugin/Resources/View/ResourceGroups/view.ctp:27
-#: Plugin/Resources/View/ResourceTypes/admin_add.ctp:3
-#: Plugin/Resources/View/ResourceTypes/admin_edit.ctp:3
-#: Plugin/Resources/View/ResourceTypes/admin_index.ctp:3;22
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:17;41
 msgid "Actions"
 msgstr "Acciones"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_add.ctp:4
-#: Plugin/Resources/View/AllowedResourceTypes/admin_edit.ctp:4
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:26
 msgid "List Allowed Resource Types"
 msgstr "Lista de tipos de recursos permitidos"
 
@@ -260,19 +362,9 @@ msgstr "Lista de tipos de recursos permitidos"
 msgid " Add Allowed Resource Type"
 msgstr "Agregar tipo de recurso permitido"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_add.ctp:12;13
-#: Plugin/Resources/View/AllowedResourceTypes/admin_edit.ctp:13;14
-#: Plugin/Resources/View/AllowedTypes/admin_add.ctp:12
-#: Plugin/Resources/View/AllowedTypes/admin_edit.ctp:21
-#: Plugin/Resources/View/ResourceGroupTypes/admin_add.ctp:12
-#: Plugin/Resources/View/ResourceGroupTypes/admin_edit.ctp:13
 msgid "Select"
 msgstr "Seleccionar"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_add.ctp:16
-#: Plugin/Resources/View/AllowedTypes/admin_add.ctp:16
-#: Plugin/Resources/View/ResourceGroupTypes/admin_add.ctp:17
-#: Plugin/Resources/View/ResourceTypes/admin_add.ctp:13
 msgid "add"
 msgstr "Agregar"
 
@@ -280,25 +372,16 @@ msgstr "Agregar"
 msgid "Admin Edit Allowed Resource Type"
 msgstr "Editar tipo de recurso permitido"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_edit.ctp:17
-#: Plugin/Resources/View/ResourceGroupTypes/admin_edit.ctp:18
-#: Plugin/Resources/View/ResourceTypes/admin_edit.ctp:16
 msgid "Save changes"
 msgstr "Guardar cambios"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_index.ctp:4
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:27
 msgid "New Allowed Resource Type"
 msgstr "Nuevo tipo de recurso permitido"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_index.ctp:8
-#: Plugin/Resources/View/Layouts/admin.ctp:59
 msgid "Allowed Resource Types"
 msgstr "Tipos de recursos permitidos"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_index.ctp:49
-#: Plugin/Resources/View/AllowedTypes/admin_index.ctp:48
-#: Plugin/Resources/View/ResourceEntities/admin_index.ctp:42
+
 msgid "Are you sure you want to delete %s?"
 msgstr "Está seguro de querer eliminar  %s?"
 
@@ -306,28 +389,15 @@ msgstr "Está seguro de querer eliminar  %s?"
 msgid "Allowed Resource Type"
 msgstr "Tipo de recurso permitido"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:4
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:4
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:4;46;81;126
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:4;44
-#: Plugin/Resources/View/ResourceGroups/view.ctp:4
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:4;32
 msgid "Id"
 msgstr "Cod"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:9
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:9
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:2
 msgid "Resource Type"
 msgstr "Tipo de recurso"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:14
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:2
-#: Plugin/Resources/View/ResourceGroups/view.ctp:9
 msgid "Resource Group Type"
 msgstr "Agrupacion de recurso"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:24
 msgid "Edit Allowed Resource Type"
 msgstr "Editar tipo de recurso permitido"
 
@@ -335,58 +405,23 @@ msgstr "Editar tipo de recurso permitido"
 msgid "Delete Allowed Resource Type"
 msgstr "Eliminar tipo de recurso permitido"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:25
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:25
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:30;63;108;159
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:30;61
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:18
-#: Plugin/Resources/View/ResourceGroups/index.ctp:24
-#: Plugin/Resources/View/ResourceGroups/view.ctp:30
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:20;59
 msgid "Are you sure you want to delete # %s?"
 msgstr "Está seguro de querer eliminar  # %s?"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:28
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:28
-#: Plugin/Resources/View/ResourceGroupTypes/admin_edit.ctp:4
-#: Plugin/Resources/View/ResourceTypes/admin_add.ctp:4
-#: Plugin/Resources/View/ResourceTypes/admin_edit.ctp:4
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:21
 msgid "List Resource Types"
 msgstr "Lista de tipos de recursos"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:29
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:29
-#: Plugin/Resources/View/ResourceTypes/admin_index.ctp:4
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:22
 msgid "New Resource Type"
 msgstr "Nuevo tipo de recurso"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:30
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:33
-#: Plugin/Resources/View/ResourceGroupTypes/admin_add.ctp:4
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:31
-#: Plugin/Resources/View/ResourceGroups/add.ctp:18
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:20
-#: Plugin/Resources/View/ResourceGroups/index.ctp:47
-#: Plugin/Resources/View/ResourceGroups/view.ctp:33
+
 msgid "List Resource Group Types"
 msgstr "Lista de agrupaciones de recursos"
 
-#: Plugin/Resources/View/AllowedResourceTypes/admin_view.ctp:31
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:34;72
-#: Plugin/Resources/View/ResourceGroupTypes/admin_index.ctp:4
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:32
-#: Plugin/Resources/View/ResourceGroups/add.ctp:19
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:21
-#: Plugin/Resources/View/ResourceGroups/index.ctp:48
-#: Plugin/Resources/View/ResourceGroups/view.ctp:34
+
 msgid "New Resource Group Type"
 msgstr "Nueva agrupacion"
 
-#: Plugin/Resources/View/AllowedTypes/admin_add.ctp:4
-#: Plugin/Resources/View/AllowedTypes/admin_edit.ctp:6
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:26
 msgid "List Allowed Types"
 msgstr "Lista de tipos permitidos"
 
@@ -403,21 +438,16 @@ msgstr "Editar tipo permitido"
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: Plugin/Resources/View/AllowedTypes/admin_index.ctp:4
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:27
 msgid "New Allowed Type"
 msgstr "Nuevo tipo permitido"
 
-#: Plugin/Resources/View/AllowedTypes/admin_index.ctp:8
 #: Plugin/Resources/View/Layouts/admin.ctp:61
 msgid "Allowed Types"
 msgstr "Tipos permitidos"
 
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:2
 msgid "Allowed Type"
 msgstr "Tipo permitido"
 
-#: Plugin/Resources/View/AllowedTypes/admin_view.ctp:14
 msgid "Mimetype"
 msgstr ""
 
@@ -425,20 +455,11 @@ msgstr ""
 msgid "Delete Allowed Type"
 msgstr "Eliminar tipo permitido"
 
-#: Plugin/Resources/View/FileUploads/external.ctp:4
-#: Plugin/Resources/View/FileUploads/index.ctp:31
 msgid "Upload Files External"
 msgstr "Cargar archivos externos"
-
-#: Plugin/Resources/View/FileUploads/external.ctp:14
-#: Plugin/Resources/View/Layouts/front.ctp:102
-#: Plugin/Resources/View/Resources/edit.ctp:13
 msgid "Groups"
 msgstr "Grupos"
 
-#: Plugin/Resources/View/FileUploads/external.ctp:15
-#: Plugin/Resources/View/FileUploads/index.ctp:103
-#: Plugin/Resources/View/Resources/edit.ctp:15
 msgid "Select groups"
 msgstr "Seleccione grupo"
 
@@ -458,12 +479,6 @@ msgstr "Iniciar Carga"
 msgid "Cancel upload"
 msgstr "Cancelar carga"
 
-#: Plugin/Resources/View/FileUploads/index.ctp:26;161
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:63;108;159
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:61
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:18
-#: Plugin/Resources/View/ResourceGroups/index.ctp:24
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:59
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -491,16 +506,7 @@ msgstr "Iniciar"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: Plugin/Resources/View/FileUploads/index.ctp:148
-msgid "Error"
-msgstr ""
 
-#: Plugin/Resources/View/FileUploads/index.ctp:152
-msgid "Info"
-msgstr ""
-
-#: Plugin/Resources/View/Helper/UploadHelper.php:30
-#: Plugin/Resources/View/Helper/ResourceHelper.php:174
 msgid "Are you sure you want to delete the record"
 msgstr "Está seguro de querer eliminar el registro"
 
@@ -514,13 +520,9 @@ msgstr "Administrador de Recursos"
 msgid "Resource Entities"
 msgstr "Entidades de recursos"
 
-#: Plugin/Resources/View/Layouts/admin.ctp:58
-#: Plugin/Resources/View/ResourceGroupTypes/admin_index.ctp:8
 msgid "Resource Group Types"
 msgstr "Tipos de grupos de recursos"
 
-#: Plugin/Resources/View/Layouts/admin.ctp:60
-#: Plugin/Resources/View/ResourceTypes/admin_index.ctp:8
 msgid "Resource Types"
 msgstr "Tipos de recursos"
 
@@ -562,9 +564,6 @@ msgstr "Opciones"
 msgid "delete all"
 msgstr "eliminar todos"
 
-#: Plugin/Resources/View/ResourceEntities/admin_add.ctp:5
-#: Plugin/Resources/View/ResourceEntities/admin_edit.ctp:4
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:31
 msgid "List Resource Entities"
 msgstr "Lista de entidades de recursos"
 
@@ -572,11 +571,6 @@ msgstr "Lista de entidades de recursos"
 msgid "Add Resource Entity"
 msgstr "Agregar entidad de recursos"
 
-#: Plugin/Resources/View/ResourceEntities/admin_add.ctp:18
-#: Plugin/Resources/View/ResourceEntities/admin_edit.ctp:19
-#: Plugin/Resources/View/ResourceGroups/add.ctp:11
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:12
-#: Plugin/Resources/View/Resources/edit.ctp:20
 msgid "Submit"
 msgstr "Enviar"
 
@@ -600,9 +594,6 @@ msgstr "Entidad de recursos"
 msgid "Name"
 msgstr "Nombre"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:14
-msgid "Alias"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceEntities/admin_view.ctp:19
 msgid "Folder"
@@ -612,31 +603,14 @@ msgstr "Directorio"
 msgid "Delete Resource Entity"
 msgstr "Eliminar entidad de recursos"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:35
-#: Plugin/Resources/View/ResourceGroups/add.ctp:20
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:22
-#: Plugin/Resources/View/ResourceGroups/index.ctp:49
-#: Plugin/Resources/View/ResourceGroups/view.ctp:35
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:23
+
 msgid "List Resources"
 msgstr "Lista de recursos"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:36;117
-#: Plugin/Resources/View/ResourceGroups/add.ctp:21
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:23
-#: Plugin/Resources/View/ResourceGroups/index.ctp:50
-#: Plugin/Resources/View/ResourceGroups/view.ctp:36
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:24;68
+
 msgid "New Resource"
 msgstr "Nuevo recurso"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:37
-msgid "List View Resource Groups"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:38;168
-msgid "New View Resource Group"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceEntities/admin_view.ctp:42
 msgid "Related Resource Group Types"
@@ -651,10 +625,6 @@ msgstr "cod Entidad de recursos"
 msgid "Is Single"
 msgstr "Es singular"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:61;106;157
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:59
-#: Plugin/Resources/View/ResourceGroups/index.ctp:22
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:57
 msgid "View"
 msgstr "visualizar"
 
@@ -665,10 +635,6 @@ msgstr "visualizar"
 msgid "Edit"
 msgstr "Editar"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:77
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:28
-msgid "Related Resources"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceEntities/admin_view.ctp:82
 #: Plugin/Resources/View/ResourceTypes/admin_view.ctp:33
@@ -700,9 +666,6 @@ msgstr "Eliminado"
 msgid "Banned"
 msgstr "Penalizado"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:122
-msgid "Related View Resource Groups"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceEntities/admin_view.ctp:127
 msgid "Resource Name"
@@ -712,93 +675,15 @@ msgstr "Nombre de recurso"
 msgid "Resource Filename"
 msgstr "nombre del archivo de recurso"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:131
-msgid "Group Type Id"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:132
-msgid "Group Type Name"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:133
-msgid "Group Type Is Single"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:134
-msgid "Type Id"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceEntities/admin_view.ctp:135
 msgid "Type Name"
 msgstr ""
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:136
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:45
-#: Plugin/Resources/View/ResourceGroups/view.ctp:19
 msgid "Ordering"
 msgstr "Orden"
 
-#: Plugin/Resources/View/ResourceEntities/admin_view.ctp:137
-msgid "Group Id"
-msgstr ""
 
-#: Plugin/Resources/View/ResourceGroupTypes/admin_add.ctp:10
-msgid "Add Resource Group Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_edit.ctp:10
-msgid "Admin Edit Resource Group Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:29
-msgid "Edit Resource Group Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:30
-msgid "Delete Resource Group Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:35
-#: Plugin/Resources/View/ResourceGroups/add.ctp:17
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:19
-#: Plugin/Resources/View/ResourceGroups/view.ctp:31
-msgid "List Resource Groups"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:36;70
-#: Plugin/Resources/View/ResourceGroups/index.ctp:46
-#: Plugin/Resources/View/ResourceGroups/view.ctp:32
-msgid "New Resource Group"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:40
-msgid "Related Resource Groups"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:46
-msgid "Resource Group Type Id"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroupTypes/admin_view.ctp:47
-msgid "Resource Id"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroups/add.ctp:4
-msgid "Add Resource Group"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroups/edit.ctp:4
-#: Plugin/Resources/View/ResourceGroups/view.ctp:29
-msgid "Edit Resource Group"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroups/index.ctp:2
-msgid "Resource Groups"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroups/index.ctp:32
-msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}"
-msgstr ""
 
 #: Plugin/Resources/View/ResourceGroups/index.ctp:37
 msgid "previous"
@@ -808,81 +693,25 @@ msgstr "Anterior"
 msgid "next"
 msgstr "Siguiente"
 
-#: Plugin/Resources/View/ResourceGroups/view.ctp:2
-msgid "Resource Group"
-msgstr ""
 
-#: Plugin/Resources/View/ResourceGroups/view.ctp:14
-msgid "Resource"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceGroups/view.ctp:30
-msgid "Delete Resource Group"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceTypes/admin_add.ctp:10
-msgid "Add Resource Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceTypes/admin_edit.ctp:10
-msgid "Admin Edit Resource Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:19
-msgid "Edit Resource Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:20
-msgid "Delete Resource Type"
-msgstr ""
-
-#: Plugin/Resources/View/ResourceTypes/admin_view.ctp:34
-msgid "Entity Id"
-msgstr ""
-
-#: Plugin/Resources/View/Resources/admin_tiny_upload.ctp:12
 msgid "Selected File"
 msgstr "Seleccionar Archivo"
 
-#: Plugin/Resources/View/Resources/admin_tiny_upload.ctp:14
 msgid "Add Resource"
 msgstr ""
 
-#: Plugin/Resources/View/Resources/edit.ctp:31
 msgid "Display"
 msgstr "Visualizar"
 
-#: Plugin/Resources/View/Resources/edit.ctp:35
 msgid "Permanently delete"
 msgstr "Eliminar permanentemente"
 
-#: Plugin/Resources/View/Resources/edit.ctp:38
 msgid "Are you sure you want to delete \\\" %s \\\"?"
 msgstr "Está seguro de querer eliminar \\\" %s \\\"?"
 
-#: Model/Entity.php:validation
-#: for field name;validation alias;validation
-#: folder Model/Featured.php:validation
-#: featured_type_id
-#: Model/FeaturedType.php:validation
-#: alias Model/Group.php:validation
-#: name
-#: Model/Profile.php:validation
-#: location_id;validation lastname;validation
-#: genre;validation address;validation phone;validation marital_status
-#: Model/ResourceEntity.php:validation
-#: Model/User.php:validation
-#: password;validation password_2;validation password_current;validation
-#: username
 msgid "notempty"
 msgstr "no vacío"
 
-#: Model/Profile.php:validation
-#: for field user_id;validation location_id
-#: Model/ResourceGroup.php:validation
-#: resource_group_type_id;validation
-#: resource_id;validation ordering Model/User.php:validation
-#: group_id
 msgid "numeric"
 msgstr "numerico"
 

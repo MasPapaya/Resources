@@ -21,6 +21,7 @@
 	</thead>
 	<tbody>
 		<?php if (isset($resources)): ?>
+
 			<?php foreach ($resources AS $resource): ?>		
 				<tr>
 					<td><?php echo h($resource['ViewResource']['id']); ?>&nbsp;</td>
@@ -42,9 +43,15 @@
 								echo $this->Html->link('<i class="icon-chevron-down"></i>', array('action' => 'order', $resource['ViewResource']['id'], $resource['ViewResource']['ordering'], 'down', $this->Paginator->current(), $resource_group_type_id, $parent_entityid), array('escape' => FALSE, 'class' => 'btn'));
 							endif;
 							?>
-							<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('action' => 'edit', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid, $entity_alias), array('escape' => FALSE, 'class' => 'btn')); ?>
-							<?php //echo $this->Html->link('<i class="icon-eye-open"></i>', '/files/' . $resource['ViewResource']['entity_folder'] . '/' . $resource['ViewResource']['filename'], array('escape' => FALSE, 'class' => 'btn', 'target' => '_blank')) ?>
-							<?php echo $this->Html->link('<i class="icon-eye-open"></i>', array('action' => 'view', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid, $entity_alias, $this->Paginator->counter('{:count}')), array('escape' => FALSE, 'class' => 'btn')) ?>
+							<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('action' => 'edit', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid, $entity_alias), array('escape' => FALSE, 'class' => 'btn')); ?>												
+							<?php
+							if ($resource['ViewResource']['type_alias'] == 'document') {
+								echo $this->Html->link('<i class="icon-download-alt"></i>', '/files/' . $resource['ViewResource']['entity_folder'] . '/' . $resource['ViewResource']['filename'], array('escape' => FALSE, 'class' => 'btn', 'target' => '_blank'));
+							} else {
+								echo $this->Html->link('<i class="icon-eye-open"></i>', array('action' => 'view', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid, $entity_alias, $this->Paginator->counter('{:count}')), array('escape' => FALSE, 'class' => 'btn'));
+							}
+							?>
+
 							<?php
 							echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $resource['ViewResource']['id']));
 							?>							

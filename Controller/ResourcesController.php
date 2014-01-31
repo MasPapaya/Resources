@@ -10,9 +10,9 @@ class ResourcesController extends FrontAppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// if(Configure::read('debug') > 1) {
-		// 	$this->Auth->allow();
-		// }	   
+		 if(Configure::read('debug') > 1) {
+		 	$this->Auth->allow();
+		 }	   
 	}
 	
 	public function index(){
@@ -76,7 +76,7 @@ class ResourcesController extends FrontAppController {
 					
 					$this->set('reload_home',true);
 				}else{
-					$this->Session->setFlash(__('error saving changes'),'flash/error');
+					$this->Session->setFlash(__d('resources','error saving changes'),'flash/error');
 				}
 				
 				$resource = $this->Resource->find('first',array(
@@ -188,7 +188,7 @@ class ResourcesController extends FrontAppController {
 						$this->ResourcesManager->CheckAndAddToGroup($id_resource,$this->request->data['ResourceGroup']['resource_group_type_id'],$Resource->bd_type);						
 					}
 				}else{
-					$this->Session->setFlash(__('error saving the file.'),'flash/error');
+					$this->Session->setFlash(__d('resources','error saving the file.'),'flash/error');
 				}
 			}
 			
@@ -247,9 +247,9 @@ class ResourcesController extends FrontAppController {
 			}
 			
 			if($error){
-				$this->Session->setFlash(__('error ordering multimedia resources'),'flash/error');
+				$this->Session->setFlash(__d('resources','error ordering multimedia resources'),'flash/error');
 			}else{
-				$this->Session->setFlash(__('Resources have been ordered successfully'),'flash/success');
+				$this->Session->setFlash(__d('resources','Resources have been ordered successfully'),'flash/success');
 			}
 			
 			$this->autoRender = false;

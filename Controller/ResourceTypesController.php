@@ -10,10 +10,7 @@ App::uses('ResourcesAppController', 'Resources.Controller');
 class ResourceTypesController extends ResourcesAppController {
 
 	public function beforeFilter() {
-		parent::beforeFilter();
-		// if(Configure::read('debug') > 1) {
-		// 	$this->Auth->allow();
-		// }	   
+		parent::beforeFilter();   
 	}
 	
 
@@ -43,7 +40,7 @@ class ResourceTypesController extends ResourcesAppController {
 	public function admin_view($id = null) {
 		$this->ResourceType->id = $id;
 		if (!$this->ResourceType->exists()) {
-			throw new NotFoundException(__('Invalid resource type'));
+			throw new NotFoundException(__d('resources','Invalid resource type'));
 		}
 		$this->set('resourceType', $this->ResourceType->read(null, $id));
 	}
@@ -57,10 +54,10 @@ class ResourceTypesController extends ResourcesAppController {
 		if ($this->request->is('post')) {
 			$this->ResourceType->create();
 			if ($this->ResourceType->save($this->request->data)) {
-				$this->Session->setFlash(__('The resource type has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('resources','The resource type has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The resource type could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('resources','The resource type could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 	}
@@ -75,14 +72,14 @@ class ResourceTypesController extends ResourcesAppController {
 	public function admin_edit($id = null) {
 		$this->ResourceType->id = $id;
 		if (!$this->ResourceType->exists()) {
-			throw new NotFoundException(__('Invalid resource type'));
+			throw new NotFoundException(__d('resources','Invalid resource type'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->ResourceType->save($this->request->data)) {
-				$this->Session->setFlash(__('The resource type has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('resources','The resource type has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The resource type could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('resources','The resource type could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$this->request->data = $this->ResourceType->read(null, $id);
@@ -103,13 +100,13 @@ class ResourceTypesController extends ResourcesAppController {
 		}
 		$this->ResourceType->id = $id;
 		if (!$this->ResourceType->exists()) {
-			throw new NotFoundException(__('Invalid resource type'));
+			throw new NotFoundException(__d('resources','Invalid resource type'));
 		}
 		if ($this->ResourceType->delete()) {
-			$this->Session->setFlash(__('Resource type deleted'), 'flash/success');
+			$this->Session->setFlash(__d('resources','Resource type deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Resource type was not deleted'), 'flash/error');
+		$this->Session->setFlash(__d('resources','Resource type was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

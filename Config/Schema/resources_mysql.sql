@@ -144,6 +144,7 @@ Resource.deleted AS deleted,
 Resource.name AS name,
 ResourceType.id AS resource_type_id,
 ResourceType.name AS type_name,
+ResourceType.alias AS type_alias,
 Entity.name AS entity_name,
 Entity.folder AS entity_folder,
 Entity.alias AS entity_alias
