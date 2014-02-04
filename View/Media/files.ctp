@@ -1,6 +1,6 @@
 <legend><?php echo __('Resource List'); ?> 
 	<div class="btn-group">
-		<?php echo $this->Html->link(__('Add Resource'), array('action' => 'upload', $resource_group_type_id, $parent_entityid), array('class' => 'btn btn-primary')); ?>
+		<?php echo $this->Html->link(__('Add Resource'), array('action' => 'upload', $resource_group_type_id, $parent_entityid,$entity_alias), array('class' => 'btn btn-primary')); ?>
 		<?php if (!empty($entity_alias)): ?>
 			<?php echo $this->Html->link(__('Cancel'), array('action' => 'index', $entity_alias, $parent_entityid), array('class' => 'btn')); ?>
 		<?php endif; ?>
@@ -53,7 +53,7 @@
 							?>
 
 							<?php
-							echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $resource['ViewResource']['id']));
+							echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $resource['ViewResource']['id'], $resource_group_type_id, $parent_entityid,$entity_alias), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $resource['ViewResource']['id']));
 							?>							
 						</div>
 					</td>

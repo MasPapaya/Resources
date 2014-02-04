@@ -22,18 +22,19 @@ class MediaController extends ResourcesAppController {
 		if (!empty($entity_id['Entity']['id'])) {
 			$this->set(compact('entity_alias'));
 			if (!$this->Entity->exists($entity_id['Entity']['id'])) {
-				throw new NotFoundException(__d('resources','Invalid Entity'));
+				throw new NotFoundException(__d('resources', 'Invalid Entity'));
 			}
 			$group_types = $this->ResourceGroupType->find('all', array('conditions' => array('entity_id' => $entity_id['Entity']['id'])));
 			$this->set(compact('group_types', 'parent_entityid'));
 		} else {
-			throw new NotFoundException(__d('resources','Invalid Entity'));
+			throw new NotFoundException(__d('resources', 'Invalid Entity'));
 		}
 	}
 
 	public function files($resource_group_type_id = NULL, $parent_entityid = NULL, $entity_alias = NULL) {
 		$this->loadModel('ViewResource');
 		$this->loadModel('Resource');
+		$this->loadModel('ResourceGroupType');
 		$this->paginate = array(
 			'ViewResource' => array(
 				'order' => 'ordering ASC',
@@ -41,14 +42,36 @@ class MediaController extends ResourcesAppController {
 				'group' => array('ViewResource.id'),
 			)
 		);
+
+		if (!empty($resource_group_type_id)) {
+			$group_type = $this->ResourceGroupType->find('first', array('conditions' => array('ResourceGroupType.id' => $resource_group_type_id)));
+
+			if (!empty($group_type)) {
+				if ((bool) $group_type['ResourceGroupType']['is_single']) {
+					$resource_id = $this->ViewResource->find('first', array(
+						'fields' => array('ViewResource.id'),
+						'conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid)
+						));
+
+					if (!empty($resource_id)) {
+						$this->redirect(array('action' => 'view_single',$resource_group_type_id,$parent_entityid,$entity_alias, $resource_id['ViewResource']['id']));
+					} else {
+						$this->redirect(array('action' => 'view_single',$resource_group_type_id,$parent_entityid,$entity_alias));
+					}
+				}
+			}
+		}
+
 		$resources = $this->paginate('ViewResource', array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid));
-
-		//$resources = $this->ViewResource->find('all', array('order' => 'ordering ASC', 'conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid)));
-
 		$this->set(compact('resources', 'resource_group_type_id', 'parent_entityid', 'entity_alias'));
-
 		$this->set('total_resources', $this->ViewResource->find('count', array('conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid))));
-		
+	}
+
+	public function view_single($resource_group_type_id = NULL, $parent_entityid = null, $entity_alias = null, $id = null) {
+		$this->loadModel('ViewResource');
+		$image = $this->ViewResource->find('first', array('conditions' => array('ViewResource.id' => $id)));
+
+		$this->set(compact('resource_group_type_id', 'parent_entityid', 'image', 'entity_alias'));
 	}
 
 	public function files_link($parent_entityid = NULL, $group_type_alias = NULL, $entity_alias = NULL) {
@@ -70,7 +93,7 @@ class MediaController extends ResourcesAppController {
 		}
 	}
 
-	public function upload($resource_group_type_id = NULL, $parent_entityid = NULL) {
+	public function upload($resource_group_type_id = NULL, $parent_entityid = NULL, $entity_alias = NULL) {
 		$this->loadModel('ResourceGroupType');
 		$this->loadModel('Resources.Resource');
 		$group = $this->ResourceGroupType->find('first', array('conditions' => array('ResourceGroupType.id' => $resource_group_type_id)));
@@ -120,30 +143,30 @@ class MediaController extends ResourcesAppController {
 									chmod($target, 0777);
 									$resource_id = $this->Save($filename, $parent_entityid, $this->request->data['Resource']['name'], $resource_type['ViewAllowedMimetype']['resource_type_id'], $resource_group_type_id);
 									if ($resource_id) {
-										$this->Session->setFlash(__d('resources','Save File'), 'flash/success');
+										$this->Session->setFlash(__d('resources', 'Save File'), 'flash/success');
 									} else {
-										$this->Session->setFlash(__d('resources','error saving the resource'), 'flash/error');
+										$this->Session->setFlash(__d('resources', 'error saving the resource'), 'flash/error');
 									}
 								} else {
-									$this->Session->setFlash(__d('resources','Error: move_uploaded_file'), 'flash/error');
+									$this->Session->setFlash(__d('resources', 'Error: move_uploaded_file'), 'flash/error');
 								}
 
 								/* NEW CODE */
 							} else {
-								$this->Session->setFlash(__d('resources','File type in not allowed.') . ' ' . $file['type'], 'flash/error');
+								$this->Session->setFlash(__d('resources', 'File type in not allowed.') . ' ' . $file['type'], 'flash/error');
 							}
 						} else {
-							$this->Session->setFlash(__d('resources','Resource not set.'), 'flash/error');
+							$this->Session->setFlash(__d('resources', 'Resource not set.'), 'flash/error');
 						}
 					} else {
-						$this->Session->setFlash(__d('resources','Resource data not set.'), 'flash/error');
+						$this->Session->setFlash(__d('resources', 'Resource data not set.'), 'flash/error');
 					}
 				} else {
 					$this->Session->setFlash(__d('resources', 'The resource could not be saved. Please, try again.'), 'flash/warning');
 				}
 			}
 
-			$this->set(compact('types', 'resource_group_type_id', 'parent_entityid'));
+			$this->set(compact('types', 'resource_group_type_id', 'parent_entityid', 'entity_alias'));
 		}
 	}
 
@@ -195,15 +218,15 @@ class MediaController extends ResourcesAppController {
 	public function edit($id = null, $resource_group_type_id = NULL, $parent_entityid = NULL, $entity_alias = NULL) {
 		$this->loadModel('Resource');
 		if (!$this->Resource->exists($id)) {
-			throw new NotFoundException(__d('resources','Invalid resource'));
+			throw new NotFoundException(__d('resources', 'Invalid resource'));
 		}
 		$this->set(compact('resource_group_type_id', 'parent_entityid', 'entity_alias'));
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Resource->save($this->request->data)) {
-				$this->Session->setFlash(__d('resources','The resource has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('resources', 'The resource has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid));
 			} else {
-				$this->Session->setFlash(__d('resources','The resource could not be saved. Please, try again.'), 'flash/warning');
+				$this->Session->setFlash(__d('resources', 'The resource could not be saved. Please, try again.'), 'flash/warning');
 			}
 		} else {
 			$options = array('conditions' => array('Resource.' . $this->Resource->primaryKey => $id));
@@ -248,30 +271,30 @@ class MediaController extends ResourcesAppController {
 		$this->set(compact('resource_group_type_id', 'parent_entityid', 'image', 'prev', 'next', 'count_images', 'entity_alias'));
 	}
 
-	public function delete($id = null, $resource_group_type_id = null, $parent_entityid = null) {
+	public function delete($id = null, $resource_group_type_id = null, $parent_entityid = null,$entity_alias=NULL) {
 		$this->loadModel('Resource');
 
 		$this->Resource->id = $id;
 
 		if (!$this->Resource->exists()) {
-			throw new NotFoundException(__d('resources','Invalid Resource'));
+			throw new NotFoundException(__d('resources', 'Invalid Resource'));
 		}
 		if ($this->Resource->updateAll(
 				array('Resource.deleted' => "'" . date('Y-m-d H:i:s') . "'"), array('Resource.id' => $id)
 		)) {
-			$this->Session->setFlash(__d('resources','Resource deleted.'), 'flash/success');
+			$this->Session->setFlash(__d('resources', 'Resource deleted.'), 'flash/success');
 		} else {
-			$this->Session->setFlash(__d('resources','Invalid Resource'), 'flash/warning');
+			$this->Session->setFlash(__d('resources', 'Invalid Resource'), 'flash/warning');
 		}
 
-		$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid));
+		$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid,$entity_alias));
 	}
 
 	public function order($id = null, $order = null, $location = null, $page = null, $resource_group_type_id, $parent_entityid) {
 		$this->loadModel('Resource');
 		$this->Resource->id = $id;
 		if (!$this->Resource->exists()) {
-			throw new NotFoundException(__d('resources','Invalid Resource'));
+			throw new NotFoundException(__d('resources', 'Invalid Resource'));
 		}
 		switch ($location) {
 			case 'up':
