@@ -54,9 +54,9 @@ class MediaController extends ResourcesAppController {
 						));
 
 					if (!empty($resource_id)) {
-						$this->redirect(array('action' => 'view_single',$resource_group_type_id,$parent_entityid,$entity_alias, $resource_id['ViewResource']['id']));
+						$this->redirect(array('action' => 'view_single', $resource_group_type_id, $parent_entityid, $entity_alias, $resource_id['ViewResource']['id']));
 					} else {
-						$this->redirect(array('action' => 'view_single',$resource_group_type_id,$parent_entityid,$entity_alias));
+						$this->redirect(array('action' => 'view_single', $resource_group_type_id, $parent_entityid, $entity_alias));
 					}
 				}
 			}
@@ -271,7 +271,7 @@ class MediaController extends ResourcesAppController {
 		$this->set(compact('resource_group_type_id', 'parent_entityid', 'image', 'prev', 'next', 'count_images', 'entity_alias'));
 	}
 
-	public function delete($id = null, $resource_group_type_id = null, $parent_entityid = null,$entity_alias=NULL) {
+	public function delete($id = null, $resource_group_type_id = null, $parent_entityid = null, $entity_alias = NULL) {
 		$this->loadModel('Resource');
 
 		$this->Resource->id = $id;
@@ -287,7 +287,7 @@ class MediaController extends ResourcesAppController {
 			$this->Session->setFlash(__d('resources', 'Invalid Resource'), 'flash/warning');
 		}
 
-		$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid,$entity_alias));
+		$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid, $entity_alias));
 	}
 
 	public function order($id = null, $order = null, $location = null, $page = null, $resource_group_type_id, $parent_entityid) {
@@ -311,6 +311,52 @@ class MediaController extends ResourcesAppController {
 				break;
 		}
 		$this->redirect(array('action' => 'files', $resource_group_type_id, $parent_entityid));
+	}
+
+	public function admin_tiny_upload() {
+		$this->layout = 'iframe';
+
+
+
+
+		if ($this->request->is('post') && is_uploaded_file($this->request->data['Resource']['filename']['tmp_name'])) {
+
+			$this->loadModel('Resources.AllowedType');
+
+			$files_allowed = $this->AllowedType->find('count', array(
+				'recursive' => 2,
+				'conditions' => array(
+					'ResourceType.alias' => 'image',
+					'AllowedType.mimetype' => $this->request->data['Resource']['filename']['type']
+				)));
+
+
+
+
+//
+			if ($files_allowed > 0) {
+				$ext_file = explode('.', $this->request->data['Resource']['filename']['name']);
+				$tiny = WWW_ROOT . 'files' . DS . 'tiny' . DS;
+				$filename = uniqid(rand(), true) . '.' . end($ext_file);
+				if (!is_dir($tiny)) {
+					$directory = new Folder();
+					if (!$directory->create($tiny, 0777)) {
+						@mkdir($tiny, 0777);
+					}
+				}
+				if (move_uploaded_file($this->request->data['Resource']['filename']['tmp_name'], $tiny . $filename)) {
+					$this->set('result', array(
+						'file' => $filename,
+					));
+					exec('chmod 0777 ' . $tiny . $filename);
+					$this->Session->setFlash(__('File successfully uploaded'), 'flash/success');
+				} else {
+					$this->Session->setFlash(__('error uploading the file'), 'flash/error');
+				}
+			} else {
+				$this->Session->setFlash(__('disallowed file, only images.'), 'flash/error');
+			}
+		}
 	}
 
 }
