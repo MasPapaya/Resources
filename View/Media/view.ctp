@@ -1,5 +1,5 @@
 <div class="btn-group">
-	<?php echo $this->Html->link(__('Cancel'), array('action' => 'files', $resource_group_type_id, $parent_entityid,$entity_alias), array('class' => 'btn')); ?>	
+	<?php echo $this->Html->link(__('Cancel'), array('action' => 'files', $resource_group_type_id, $parent_entityid,$entity_alias), array('class' => 'btn btn-default')); ?>	
 </div>
 <div class="view_image">
 

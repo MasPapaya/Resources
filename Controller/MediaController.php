@@ -51,8 +51,7 @@ class MediaController extends ResourcesAppController {
 					$resource_id = $this->ViewResource->find('first', array(
 						'fields' => array('ViewResource.id'),
 						'conditions' => array('deleted' => Configure::read('zero_datetime'), 'group_type_id' => $resource_group_type_id, 'parent_entityid' => $parent_entityid)
-						));
-
+						));					
 					if (!empty($resource_id)) {
 						$this->redirect(array('action' => 'view_single', $resource_group_type_id, $parent_entityid, $entity_alias, $resource_id['ViewResource']['id']));
 					} else {

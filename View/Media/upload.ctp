@@ -2,7 +2,7 @@
 <fieldset>
 	<legend><?php echo __(' Add Resource'); ?></legend>
 	<?php
-	echo $this->Form->input('name', array());
+	echo $this->Form->input('name', array('class'=>'form-control'));
 	echo $this->Form->input('file', array('type' => 'file'));
 	?>
 	<div>
@@ -19,7 +19,7 @@
 </fieldset>
 <div class="btn-group">
 	<?php
-	echo $this->Html->link(__('Cancel'), array('action' => 'files', $resource_group_type_id, $parent_entityid, $entity_alias), array('class' => 'btn'));
+	echo $this->Html->link(__('Cancel'), array('action' => 'files', $resource_group_type_id, $parent_entityid, $entity_alias), array('class' => 'btn btn-default'));
 	echo $this->Form->submit(__('Save'), array('div' => FALSE, 'class' => 'btn btn-primary'));
 	?>
 </div>
