@@ -1,8 +1,8 @@
 <?php echo $this->Form->create('Resource', array('type' => 'file')); ?>
 <fieldset>
-	<legend><?php echo __(' Add Resource'); ?></legend>
+	<legend><?php echo __d('resources', 'Add Resource'); ?></legend>
 	<?php
-	echo $this->Form->input('name', array('class'=>'form-control'));
+	echo $this->Form->input('name', array('class' => 'form-control'));
 	echo $this->Form->input('file', array('type' => 'file'));
 	?>
 	<div>
