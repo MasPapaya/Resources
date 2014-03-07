@@ -91,6 +91,5 @@ class ResourcesHandlerComponent extends Component {
     }
     
 
-    
-
+  
 }

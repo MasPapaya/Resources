@@ -21,7 +21,6 @@ class ResourcesAppController extends AppController {
 //		'Security',
 //		'Cookie',
 	);
-	
 
 	public function beforeFilter() {
 		parent::beforeFilter();

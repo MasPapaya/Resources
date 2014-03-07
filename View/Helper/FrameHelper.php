@@ -7,17 +7,36 @@ class FrameHelper extends AppHelper {
 
 	public $helpers = array('Html', 'Js');
 
-	public function link_files($icon = 'icon-film', $id = 'default', $parent_entityid = NULL, $resource_group_type_alias = NULL, $entity_alias = NULl) {
+	public function __construct(View $View, $settings = array()) {
+		parent::__construct($View, $settings);
+		$this->loadheader();
+	}
+
+	public function loadheader() {
+		echo $this->Html->css(array('Resources.media'), array('inline' => FALSE));
+		//echo $this->Html->script(array('Schick.scroll/jquery.mousewheel.min', 'Schick.scroll/jquery.mCustomScrollbar', 'Schick.schick_default',), array('inline' => FALSE));
+	}
+
+	public function link_files($icon = 'icon-film', $id = 'default', $parent_entityid = NULL, $resource_group_type_alias = NULL, $entity_alias = NULl, $iconB = TRUE) {
 		$this->scriptload();
 		$url = array('plugin' => 'resources', 'controller' => 'Media', 'action' => 'files_link', $parent_entityid, $resource_group_type_alias, $entity_alias, 'admin' => FALSE);
-
-		return $this->Html->link('<i class="' . $icon . '"></i>', '#' . $id, array(
-				'role' => 'button',
-				'class' => 'btn btn-resources',
-				'data-toggle' => 'modal',
-				'escape' => FALSE,
-				'data-url' => Router::url($url, true)
-			));
+		if ((bool) $iconB) {
+			return $this->Html->link('<i class="' . $icon . '"></i>', '#' . $id, array(
+					'role' => 'button',
+					'class' => 'btn btn-resources',
+					'data-toggle' => 'modal',
+					'escape' => FALSE,
+					'data-url' => Router::url($url, true)
+				));
+		} else {
+			return $this->Html->link($icon, '#' . $id, array(
+					'role' => 'button',
+					'class' => 'btn-resources',
+					'data-toggle' => 'modal',
+					'escape' => FALSE,
+					'data-url' => Router::url($url, true)
+				));
+		}
 	}
 
 	public function link($icon = 'icon-film', $id = 'default', $entity = '', $parent_entityid = NULL) {
